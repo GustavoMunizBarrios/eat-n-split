@@ -55,6 +55,8 @@ function Friend({ friend }) {
         </p>
       )}
       {friend.balance === 0 && <p>You and your {friend.anme} are even</p>}
+
+      <button className="button">Set</button>
     </li>
   );
 }
