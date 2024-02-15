@@ -58,26 +58,29 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      <div className="sidebar">
-        <FriendList
-          friends={friends}
-          onSelection={handleSelection}
-          selectedFriend={selectedFriend}
-        />
+    <div>
+      <h1 className="appContainer">Split the bill</h1>
+      <div className="app">
+        <div className="sidebar">
+          <FriendList
+            friends={friends}
+            onSelection={handleSelection}
+            selectedFriend={selectedFriend}
+          />
 
-        {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
+          {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
 
-        <Button click={handleShowAddFriend}>
-          {showAddFriend ? "Close" : "Add friend"}
-        </Button>
+          <Button click={handleShowAddFriend}>
+            {showAddFriend ? "Close" : "Add friend"}
+          </Button>
+        </div>
+        {selectedFriend && (
+          <FormSplitBill
+            selectedFriend={selectedFriend}
+            onSplitBill={handleSplitBill}
+          />
+        )}
       </div>
-      {selectedFriend && (
-        <FormSplitBill
-          selectedFriend={selectedFriend}
-          onSplitBill={handleSplitBill}
-        />
-      )}
     </div>
   );
 }
@@ -201,7 +204,12 @@ function FormSplitBill({ selectedFriend, onSplitBill }) {
       />
 
       <label>💲 {selectedFriend.name}'s' expense</label>
-      <input type="text" disabled value={paidByFriend} />
+      <input
+        type="text"
+        disabled
+        value={paidByFriend}
+        className="inputDisabled"
+      />
 
       <label>🟩 Who is paying the bill?</label>
       <select

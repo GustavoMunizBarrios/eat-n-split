@@ -28,6 +28,13 @@ body {
   align-items: center;
   justify-content: center;
 }
+.appContainer {
+  display: grid;
+  justify-items: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.2rem;
+}
 
 .app {
   min-height: 66vh;
@@ -152,6 +159,10 @@ select {
   border-radius: 4px;
   transition: 0.3s;
   background-color: var(--color-base);
+}
+
+.inputDisabled {
+  border: none;
 }
 
 input:focus,
