@@ -183,3 +183,20 @@ form h2 {
   letter-spacing: -0.5px;
   margin-bottom: 1.6rem;
 }
+
+/* ***************************************************************** */
+/* ********************* MEDIA QUERIES ***************************** */
+/* ***************************************************************** */
+
+@media (max-width: 860px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+  .form-split-bill {
+    margin-top: 1.5rem;
+  }
+  input,
+  select {
+    font-size: inherit;
+  }
+}
